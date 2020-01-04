@@ -1,6 +1,7 @@
 package com.dream.mobile.rmi.interfaces;
 import java.rmi.Remote; 
-import java.rmi.RemoteException; 
+import java.rmi.RemoteException;
+import java.sql.Array;
 import java.util.*;
 
 /**
@@ -45,6 +46,12 @@ public interface RemoteInterface extends Remote {
     * This method contains the API Call to the site Quickchart.io
     * method sends the data to Quickchart.io after parsing them as a JSONObject and returns the url to the client
     */
-   public String getChart() throws Exception;
+   public String getChart(ArrayList<String> labels,ArrayList<Integer> values,String heading,String chartType) throws Exception;
+   
+   /**
+    * 
+    * 
+    */
+   public int getItemCount(String coloumnName,String itemName) throws Exception;
 
 }
